@@ -1,0 +1,287 @@
+.leaflet-container {
+  /* 配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gakubuti {
+  /* 配置 */
+  position: relative;
+  width: 100vw;
+  height: 55rem;
+}
+
+.loader {
+  /* 配置 */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* 背景色 */
+  background: rgba(255, 255, 255, 0.5);
+
+  /* 優先度 */
+  z-index: 9999;
+}
+
+.nowlocading {
+  /* 余白 */
+  margin-top: 1rem;
+
+  /* フォント */
+  color: white;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.buttom {
+  /* 余白 */
+  margin: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  /* 背景色 */
+  background-color: blue;
+
+  /* フォント */
+  color: rgba(255, 255, 255);
+  font-family: serif;
+  font-size: 1.125rem;
+  line-height: 2.5rem;
+
+  /* 境界線 */
+  border-radius: 0.5rem;
+
+  /* アニメーション */
+  transition-property: color, background-color, border, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.buttomflex {
+  /* 配置 */
+  display: flex;
+}
+
+/* ホバー時 */
+.buttom:hover {
+  /* 背景色 */
+  background-color: rgb(123, 139, 226);
+  cursor: pointer;
+}
+
+/************* Welcome page *************/
+.welcome {
+  /* 配置 */
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+
+  /* 余白 */
+  margin: 0 0;
+  padding: 0 0;
+
+  /* 背景色 */
+  background-color: rgba(51, 56, 73, 0.562);
+  
+  /* フォント */
+  color: black;
+  font-family: serif;
+}
+
+/******* header *******/
+.welcome header {
+  /* 配置 */
+  position: inherit sticky;
+  display: block;
+  width: auto;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 0;
+  padding: 0 0;
+
+  /* 背景色 */
+  background-color: black;
+
+  /* フォント */
+  color: white;
+}
+.welcome header h1 {
+  /* 配置 */
+  position: inherit;
+  text-align: center;
+
+  /* 余白 */
+  margin: 0 0;
+  padding: 0.1vh 0;
+
+  /* フォント */
+  font-size: 48px;
+}
+
+/******* button *******/
+.welcome .buttom {
+  /* 配置 */
+  position: inherit;
+  display: flex;
+  justify-content: flex-end;
+
+  /* 余白 */
+  margin: 0.5rem auto;
+  padding: auto;
+}
+
+/******* ul *******/
+.welcome ul {
+  /* 配置 */
+  position: inherit sticky;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 0 0 16rem;
+  padding: 2rem 0 10rem 0;
+}
+.welcome ul li {
+  /* 配置 */
+  position: inherit sticky;
+  top: auto;
+  left: auto;
+  float: left;
+  width: 17vw;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 0 0 15rem;
+  padding: auto;
+
+  /* 背景色 */
+  background-color: rgba(250, 247, 208, 0.562);
+
+  /* 境界線 */
+  border: solid 2px blue;
+  border-top: none;
+  border-radius: 3px;
+
+  /* リストスタイル */
+  list-style: none;
+}
+.welcome ul li h1{
+  /* 配置 */
+  position: inherit;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 -0.15rem 0 -0.1rem;
+  padding: 0.1em 0 0 1rem;
+  
+  /* 背景色 */
+  background-color: rgb(62, 148, 201);
+
+  /* 境界線 */
+  border-left: solid 1rem blue;
+}
+.welcome ul li p {
+  /* 配置 */
+  position: inherit;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+
+  /* 余白 */
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+/******* contents *******/
+.contents {
+  /* 配置 */
+  position: inherit;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  
+  /* 余白 */
+  margin: 1rem 30rem;
+  padding: 1rem 0;
+
+  /* 背景色 */
+  background-color: rgba(221, 204, 241, 0.308);
+
+  /* 境界線 */
+  border: solid 5px rgb(85, 18, 241);
+  border-radius: 0.5rem;
+}
+.contents h1 {
+  /* 配置 */
+  position: relative;
+  width: 8vw;
+  height: auto;
+  min-width: 8vw;
+  text-align: center;
+
+  /* 余白 */
+  margin: 0.5rem 23.5rem;
+  padding: 0.2rem 0.5rem 0 0.5rem;
+
+  /* 背景色 */
+  background-color: rgba(255, 255, 255, 0.781);
+
+  /* フォント */
+  font-size: 24px;
+
+  /* 境界線 */
+  border-left: solid 1rem rgb(255, 230, 0);
+}
+.contents h2 {
+  /* 配置 */
+  text-align: left;
+
+  /* 余白 */
+  margin: 1rem 3rem;
+  padding: 0.2rem 0 0.2rem 2rem;
+
+  /* 背景色 */
+  background-color: rgba(52, 182, 52, 0.562);
+
+  /* フォント */
+  font-size: 1.2rem;
+
+  /* 境界線 */
+  outline: dashed 0.2rem green;
+  color: white;
+}
+.contents p {
+  /* 余白 */
+  margin: 0 3rem;
+  padding: auto;
+}
+
+
+/*
+.cursor-pin {
+  cursor: url("./cursor/cursor_pin.png") 12 50, grab;
+}
+*/
