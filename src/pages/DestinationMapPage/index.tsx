@@ -61,8 +61,7 @@ const DestinationMapPage = () => {
             })
     }
     return (
-        <>
-
+        <div className="dest-map">
             <BaseHeader>
                 <div className="bottomflex">
                     <BaseCheckBox onChange={onClickJunkai} >
@@ -75,13 +74,18 @@ const DestinationMapPage = () => {
                         戻る
                     </BaseButton>
                 </div>
-
             </BaseHeader>
-            <div className="gakubuti">
 
-                <DynamicMap />
-            </div>
-        </>
+            <main>
+                <div className="gakubuti">
+                    <DynamicMap />
+                </div>
+            </main>
+
+            <footer>
+                <h1>&copy; Kohga. All rights Reserved.</h1>
+            </footer>
+        </div>
     )
 }
 export default DestinationMapPage

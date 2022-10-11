@@ -5,11 +5,17 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
 }
 
 .gakubuti {
   /* 配置 */
   position: relative;
+
+  /* 幅、高さ */
   width: 100vw;
   height: 55rem;
 }
@@ -72,6 +78,8 @@
   display: flex;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ↓↓↓ 追加した分 ↓↓↓ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /* ホバー時 */
 .buttom:hover {
   /* 背景色 */
@@ -79,178 +87,226 @@
   cursor: pointer;
 }
 
-/************* Welcome page *************/
+/************************** Welcome page **************************/
 .welcome {
   /* 配置 */
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
   width: 100vw;
-  height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
+  height: auto;
 
   /* 余白 */
-  margin: 0 0;
-  padding: 0 0;
+  margin: 0 auto;
+  padding: 0;
 
   /* 背景色 */
-  background-color: rgba(51, 56, 73, 0.562);
-  
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
   /* フォント */
-  color: black;
   font-family: serif;
+
+  /* 制限 */
+  user-select: none;
+  overflow: hidden scroll;
+  
+  /*** Firefox ***/
+  scrollbar-width: none;
+  /*** IE, Microsoft Edge ***/
+  -ms-overflow-style: none;
+}
+/*** Chrome, Safari ***/
+*::-webkit-scrollbar{
+  display: none;
 }
 
-/******* header *******/
+/******************** header ********************/
 .welcome header {
   /* 配置 */
   position: inherit sticky;
-  display: block;
-  width: auto;
-  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 6vh;
 
   /* 余白 */
-  margin: 0 0;
-  padding: 0 0;
+  margin: 0 auto;
 
   /* 背景色 */
-  background-color: black;
-
-  /* フォント */
-  color: white;
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
 }
 .welcome header h1 {
   /* 配置 */
-  position: inherit;
   text-align: center;
+  top: 0;
+  left: 0;
 
   /* 余白 */
-  margin: 0 0;
-  padding: 0.1vh 0;
+  margin: 0 auto;
 
   /* フォント */
-  font-size: 48px;
+  font-size: 4vh;
+  color: white;
 }
 
-/******* button *******/
-.welcome .buttom {
+/******************** main ********************/
+.welcome main {
   /* 配置 */
-  position: inherit;
-  display: flex;
-  justify-content: flex-end;
+  position: relative;
+  top: 0;
+  left: 0;
 
-  /* 余白 */
-  margin: 0.5rem auto;
-  padding: auto;
-}
-
-/******* ul *******/
-.welcome ul {
-  /* 配置 */
-  position: inherit sticky;
-  top: auto;
-  left: auto;
-  width: auto;
+  /* 幅、高さ */
+  width: 100vw;
   height: auto;
 
   /* 余白 */
-  margin: 0 0 0 16rem;
-  padding: 2rem 0 10rem 0;
+  margin: 0 auto;
 }
-.welcome ul li {
+
+/*** リスト ***/
+.welcome main ul {
   /* 配置 */
-  position: inherit sticky;
-  top: auto;
-  left: auto;
-  float: left;
-  width: 17vw;
+  position: relative;
+
+  /* 幅、高さ */
+  width: 80vw;
   height: auto;
 
   /* 余白 */
-  margin: 0 0 0 15rem;
-  padding: auto;
+  margin: 5vh 0 0 15vw;
+  padding: 0;
+}
+.welcome main ul li {
+  /* 配置 */
+  display: inline-block;
+  top: 0;
+  left: 0;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: 30vw;
+  height: 16vh;
+
+  /* 余白 */
+  margin: 0 10vw 0 0;
+  padding: 0;
 
   /* 背景色 */
-  background-color: rgba(250, 247, 208, 0.562);
+  background-color: rgba(0, 0, 0, 0.219);
 
   /* 境界線 */
-  border: solid 2px blue;
+  border: solid 0.45rem blue;
   border-top: none;
-  border-radius: 3px;
+  box-sizing: border-box;
 
   /* リストスタイル */
   list-style: none;
 }
-.welcome ul li h1{
+.welcome main ul li h1{
   /* 配置 */
-  position: inherit;
-  top: auto;
-  left: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  /* 幅、高さ */
   width: auto;
   height: auto;
+  min-width: 10vw;
 
   /* 余白 */
-  margin: 0 -0.15rem 0 -0.1rem;
-  padding: 0.1em 0 0 1rem;
+  margin: 0 0 0 -0.45rem;
+  padding: 0;
   
   /* 背景色 */
-  background-color: rgb(62, 148, 201);
+  background: linear-gradient(to right, rgb(127, 215, 250), white);
+
+  /* フォント */
+  font-size: 2vh;
+  line-height: normal;
 
   /* 境界線 */
-  border-left: solid 1rem blue;
+  border-left: solid 1rem rgb(132, 0, 240);
 }
-.welcome ul li p {
+.welcome main ul li p {
   /* 配置 */
   position: inherit;
-  top: auto;
-  left: auto;
-  width: auto;
-  height: auto;
 
   /* 余白 */
-  margin: 0;
-  padding: 0.5rem 1rem;
+  margin: 1vh 0 0 0;
+  padding: 0.2vh 0 1vh 0;
+
+  /* フォント */
+  font-size: 1vw;
+  line-height: normal;
 }
 
-/******* contents *******/
+/*** button ***/
+.welcome main .buttom {
+  /* 配置 */
+  position: relative;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: auto;
+  height: 4vh;
+  min-width: 5vw;
+
+  /* 余白 */
+  margin: 1vh 0 1.5vh 0;
+  padding: 0 1vw;
+
+  /* フォント */
+  font-size: 1vw;
+  line-height: 1vh;
+}
+
+/*** contents ***/
 .contents {
   /* 配置 */
-  position: inherit;
-  top: auto;
-  left: auto;
+  position: relative;
+  top: 5vh;
+
+  /* 幅、高さ */
   width: auto;
   height: auto;
+  min-width: 80vw;
   
   /* 余白 */
-  margin: 1rem 30rem;
-  padding: 1rem 0;
+  margin: 2vh 10vw 10vh 10vw;
+  padding: 1vh 0;
 
   /* 背景色 */
-  background-color: rgba(221, 204, 241, 0.308);
+  background-color: rgba(181, 171, 253, 0.473);
 
   /* 境界線 */
   border: solid 5px rgb(85, 18, 241);
   border-radius: 0.5rem;
 }
 .contents h1 {
-  /* 配置 */
-  position: relative;
-  width: 8vw;
-  height: auto;
-  min-width: 8vw;
+  /* 幅、高さ */
+  width: auto;
+  height: 3.5vh;
+  min-width: 10vw;
   text-align: center;
 
   /* 余白 */
-  margin: 0.5rem 23.5rem;
-  padding: 0.2rem 0.5rem 0 0.5rem;
+  margin: 0 10vw;
+  padding: 0.2vh auto;
 
   /* 背景色 */
   background-color: rgba(255, 255, 255, 0.781);
 
   /* フォント */
-  font-size: 24px;
+  font-size: 2.5vh;
 
   /* 境界線 */
   border-left: solid 1rem rgb(255, 230, 0);
@@ -260,28 +316,414 @@
   text-align: left;
 
   /* 余白 */
-  margin: 1rem 3rem;
-  padding: 0.2rem 0 0.2rem 2rem;
+  margin: 3vh 2vw 1vh 2vw;
+  padding: 0.2vh 0 0.2vh 2vw;
 
   /* 背景色 */
   background-color: rgba(52, 182, 52, 0.562);
 
   /* フォント */
-  font-size: 1.2rem;
+  font-size: 1vw;
+  color: white;
 
   /* 境界線 */
-  outline: dashed 0.2rem green;
-  color: white;
+  outline: dashed 0.2vw green;
 }
 .contents p {
   /* 余白 */
-  margin: 0 3rem;
+  margin: 0 2vw;
   padding: auto;
+
+   /* フォント */
+   font-size: 1vw;
 }
 
+/******************** footer ********************/
+.welcome footer {
+  /* 配置 */
+  position: relative;
+  bottom: 0;
 
-/*
-.cursor-pin {
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.welcome footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
+
+/************************** CarMenu page **************************/
+.car-menu {
+  /* 配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 0;
+
+  /* 背景色 */
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
+  /* フォント */
+  font-family: serif;
+
+    /* 制限 */
+    user-select: none;
+}
+
+/******************** header ********************/
+.car-menu header {
+  /* 配置 */
+  position: inherit sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 6vh;
+
+  /* 余白 */
+  margin: 0 auto;
+
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.car-menu header h1 {
+  /* 配置 */
+  text-align: center;
+  top: 0;
+  left: 0;
+
+  /* 余白 */
+  margin: 0 auto;
+
+  /* フォント */
+  font-size: 4vh;
+  color: white;
+}
+
+/******************** main ********************/
+.car-menu main {
+  /* 配置 */
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/*** button ***/
+.car-menu main .buttom {
+  /* 配置 */
+  display: block;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
+  min-width: 20vw;
+
+  /* 余白 */
+  margin: 12vh 0 0 0;
+
+  /* フォント */
+  font-size: 2.5vh;
+}
+
+/******************** footer ********************/
+.car-menu footer {
+  /* 配置 */
+  position: absolute;
+  bottom: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.car-menu footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
+
+/************************** End page **************************/
+.end {
+  /* 配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 0;
+
+  /* 背景色 */
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
+  /* フォント */
+  font-family: serif;
+
+    /* 制限 */
+    user-select: none;
+}
+
+/******************** header ********************/
+.end header {
+  /* 配置 */
+  position: inherit sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 6vh;
+
+  /* 余白 */
+  margin: 0 auto;
+
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.end header h1 {
+  /* 配置 */
+  text-align: center;
+  top: 0;
+  left: 0;
+
+  /* 余白 */
+  margin: 0 auto;
+
+  /* フォント */
+  font-size: 4vh;
+  color: white;
+}
+
+/******************** main ********************/
+.end main {
+  /* 配置 */
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+.end main h1 {
+  /* 余白 */
+  margin: 20vh 0 0 0;
+
+  /* フォント */
+  font-size: 4vh;
+}
+
+/*** button ***/
+.end main .buttom {
+  /* 配置 */
+  display: block;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
+  min-width: 20vw;
+
+  /* 余白 */
+  margin: 12vh 0 0 0;
+
+  /* フォント */
+  font-size: 2.5vh;
+}
+
+/******************** footer ********************/
+.end footer {
+  /* 配置 */
+  position: absolute;
+  bottom: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.end footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
+
+/************************** DestinationMap page **************************/
+.dest-map {
+  /* 配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: auto;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 0;
+
+  /* 背景色 */
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
+  /* フォント */
+  font-family: serif;
+
+  /* 制限 */
+  user-select: none;
+  overflow: hidden;
+}
+
+/******************** header ********************/
+.dest-map header {
+  /* 配置 */
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 6vh;
+
+  /* 余白 */
+  margin: 0;
+
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.dest-map header label {
+  /* フォント */
+  color: white;
+}
+/*** button ***/
+.dest-map header .buttom {
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
+  min-width: 4vw;
+
+  /* フォント */
+  font-size: 1vw;
+  line-height: normal;
+}
+
+/******************** main ********************/
+.dest-map main {
+  /* 配置 */
+  content: "";
+}
+
+.dest-map main .leaflet-container {
+  /* 幅、高さ */
+  width: 100vw;
+  height: 89.8vh;
+
+  /* カーソル */
+  cursor: url("./cursor/marker-icon.png") 12 50, grab;
+}
+
+.dest-map main .leaflet-container:active {
+  cursor: grabbing;
+}
+
+/******************** footer ********************/
+.dest-map footer {
+  /* 配置 */
+  position: absolute;
+  bottom: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.dest-map footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
+
+/* .cursor-pin {
   cursor: url("./cursor/cursor_pin.png") 12 50, grab;
-}
-*/
+} */
