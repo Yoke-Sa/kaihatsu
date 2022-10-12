@@ -16,7 +16,7 @@ const WelcomePage = () => {
                 <ul>
                     <li>
                         <h1>車の利用</h1>
-                        <p>車と通信を開始します。</p>
+                        <p>車と通信を行います。</p>
                         <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="buttom">
                             車を使う
                         </BaseButton>

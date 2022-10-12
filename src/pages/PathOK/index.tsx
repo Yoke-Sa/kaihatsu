@@ -18,20 +18,25 @@ const PathOK = () => {
     const { page, setPage } = useContext(PageStateContext);
     const { radius, setRadius } = useContext(CircleContext);
     return (
-        <>
+        <div className="path-check">
             <BaseHeader>
-                <div className="bottomflex">
-                    <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
-                        TOPへ
-                    </BaseButton>
-                    <label htmlFor="sel">半径を入力</label>
-                    <input type="number" onChange={(e) => setRadius(e.target.valueAsNumber)} name="sel" id="sel" value={radius} />
-                </div>
+                <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
+                    TOPへ
+                </BaseButton>
+                <label htmlFor="sel">半径を入力</label>
+                <input type="number" onChange={(e) => setRadius(e.target.valueAsNumber)} name="sel" id="sel" value={radius} />
             </BaseHeader>
-            <div className="gakubuti">
-                <DynamicMap />
-            </div>
-        </>
+
+            <main>
+                <div className="gakubuti">
+                    <DynamicMap />
+                </div>
+            </main>
+
+            <footer>
+                <h1>&copy; Kohga. All rights Reserved.</h1>
+            </footer>
+        </div>
     )
 }
 export default PathOK;

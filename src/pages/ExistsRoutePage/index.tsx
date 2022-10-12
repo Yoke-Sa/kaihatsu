@@ -13,23 +13,27 @@ const ExistsRoutePage = () => {
     //ここでLatLng[][]を取ってきても映らないから何かロジックを考えないといけない
     //ここにMapを持ってきてここでダイナミックインポート
     return (
-        <>
+        <div className="exist-route">
             <BaseHeader>
-                <div className="buttomflex">
-                    <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="buttom">
-                        車メニューに戻る
-                    </BaseButton>
+                <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="buttom">
+                    車メニューに戻る
+                </BaseButton>
 
-                    <BaseButton onClick={() => OnClickSetState(4, setPage)} _className="buttom">
-                        この経路に行く
-                    </BaseButton>
-
-                </div>
+                <BaseButton onClick={() => OnClickSetState(4, setPage)} _className="buttom">
+                    この経路に行く
+                </BaseButton>
             </BaseHeader>
-            <div className="gakubuti">
-                <DynamicRouteMap />
-            </div>
-        </>
+            
+            <main>
+                <div className="gakubuti">
+                    <DynamicRouteMap />
+                </div>
+            </main>
+
+            <footer>
+                <h1>&copy; Kohga. All rights Reserved.</h1>
+            </footer>
+        </div>
     )
 }
 export default ExistsRoutePage

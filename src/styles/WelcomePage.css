@@ -2,10 +2,7 @@
 .welcome {
   /* 配置 */
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
 
   /* 幅、高さ */
   width: 100vw;
@@ -18,7 +15,7 @@
   /* 背景色 */
   background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
 
-  /* 制限 */
+  /* 表示 */
   overflow: hidden scroll;
 }
   
@@ -26,17 +23,14 @@
 .welcome header {
   /* 配置 */
   position: relative;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  inset: inherit;
 
   /* 幅、高さ */
-  width: 100vw;
+  width: inherit;
   height: 6vh;
 
   /* 余白 */
-  margin: 0 auto;
+  margin: inherit;
 
   /* 背景色 */
   background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
@@ -44,11 +38,10 @@
 .welcome header h1 {
   /* 配置 */
   text-align: center;
-  top: 0;
-  left: 0;
+  inset: inherit;
 
   /* 余白 */
-  margin: 0 auto;
+  margin: inherit;
 
   /* フォント */
   font-size: 4vh;
@@ -59,15 +52,14 @@
 .welcome main {
   /* 配置 */
   position: relative;
-  top: 0;
-  left: 0;
+  inset: 0;
 
   /* 幅、高さ */
-  width: 100vw;
-  height: auto;
+  width: inherit;
+  height: inherit;
 
   /* 余白 */
-  margin: 0 auto;
+  margin: inherit;
 }
 
 /*** リスト ***/
@@ -78,7 +70,7 @@
 
   /* 幅、高さ */
   width: 80vw;
-  height: auto;
+  height: inherit;
 
   /* 余白 */
   margin: 5vh 0 0 15vw;
@@ -90,11 +82,11 @@
 .welcome main ul li {
   /* 幅、高さ */
   width: 30vw;
-  height: auto;
+  height: inherit;
 
   /* 余白 */
   margin: 0 10vw 0 0;
-  padding: 0 auto;
+  padding: inherit;
 
   /* 背景色 */
   background-color: rgba(0, 0, 0, 0.219);
@@ -102,22 +94,22 @@
   /* 枠線 */
   border: solid 0.45rem blue;
   border-top: none;
+  border-radius: 1rem;
   box-sizing: border-box;
 }
 .welcome main ul li h1{
   /* 配置 */
   position: relative;
-  top: 0;
-  left: 0;
+  inset: 0;
 
   /* 幅、高さ */
   width: auto;
-  height: auto;
+  height: inherit;
   min-width: 10vw;
 
   /* 余白 */
   margin: 0 0 0 -0.45rem;
-  padding: 0;
+  padding: inherit;
   
   /* 背景色 */
   background: linear-gradient(to right, rgb(127, 215, 250), white);
@@ -168,11 +160,11 @@
 
   /* 幅、高さ */
   width: auto;
-  height: auto;
-  min-width: 80vw;
+  height: inherit;
+  min-width: 70vw;
   
   /* 余白 */
-  margin: 2vh 10vw 10vh 10vw;
+  margin: 2vh 15vw 10vh 15vw;
   padding: 1vh 0;
 
   /* 背景色 */
@@ -180,7 +172,7 @@
 
   /* 枠線 */
   border: solid 5px rgb(85, 18, 241);
-  border-radius: 0.5rem;
+  border-radius: 5rem;
 }
 .contents h1 {
   /* 幅、高さ */
@@ -201,6 +193,7 @@
 
   /* 枠線 */
   border-left: solid 1rem rgb(255, 230, 0);
+  border-right: solid 1rem rgb(255, 230, 0);
 }
 .contents h2 {
   /* 配置 */
@@ -225,37 +218,64 @@
   margin: 0 2vw;
   padding: auto;
 
-    /* フォント */
-    font-size: 1vw;
+  /* フォント */
+  font-size: 1vw;
 }
 
 /******************** footer ********************/
 .welcome footer {
   /* 配置 */
   position: relative;
-  bottom: 0;
+  inset: 0;
 
   /* 幅、高さ */
   width: 100vw;
-  height: 4vh;
+  height: 4.5vh;
 
   /* 余白 */
   margin: inherit;
-  padding: auto;
+  padding: 0;
 
   /* 背景色 */
   background: radial-gradient(skyblue, blue);
 }
-.welcome footer h1 {
-  /* 配置 */
-  display: block;
-  text-align: right;
 
-  /* 余白 */
-  margin: 0 auto;
-  padding: 1vh 0 0 0;
 
-  /* フォント */
-  font-size: 2vh;
-  color: white;
+
+/******************** お試しレスポンシブ ********************/
+/* PC */
+@media screen and ((min-height:800px) or (min-width: 1024px)) {
+  .welcome {
+
+  }
+}
+/* タブレット */
+@media screen and (min-height: 600px) and (max-height: 800px) {
+  .welcome {
+
+  }
+}
+/* タブレット(小) */
+@media screen and (max-height: 600px) {
+  .welcome {
+
+  }
+}
+/* スマホ(大) */
+@media screen and (min-width: 380px) and (max-width: 600px) {
+  .welcome {
+
+  }
+}
+/* スマホ(中) */
+@media screen and (min-width: 300px) and (max-width: 380px) {
+  .welcome {
+
+  }
+}
+/* スマホ(小) */
+@media screen and (max-width: 300px) {
+  .welcome {
+
+  }
 }

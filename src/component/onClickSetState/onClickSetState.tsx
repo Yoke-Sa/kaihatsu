@@ -8,7 +8,7 @@ const pagePath = [
     '/AddRoutePage',
     '/CarWatchPage',
     '/EndPage',
-    '/CarWatchPage',
+    '/CarKanri',
     '/PathOK',
     '/AllCar',
     '/WelcomePage'

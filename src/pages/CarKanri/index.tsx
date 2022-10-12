@@ -16,22 +16,20 @@ const DynamicMap = dynamic(() => {
 const CarKanri = () => {
     const { page, setPage } = useContext(PageStateContext);
     return (
-        <>
+        <div className="car-manage">
             <BaseHeader>
-                <div className="bottomflex">
-                    <h1>通行可能領域</h1>
-                    <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
-                        TOPへ
-                    </BaseButton>
-                    <BaseButton onClick={() => OnClickSetState(8, setPage)} _className="buttom">
-                        通行可能領域設定
-                    </BaseButton>
-                    <BaseButton onClick={() => OnClickSetState(9, setPage)} _className="buttom">
-                        車一覧
-                    </BaseButton>
-                </div>
+                <h1>通行可能領域</h1>
+                <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
+                    TOPへ
+                </BaseButton>
+                <BaseButton onClick={() => OnClickSetState(8, setPage)} _className="buttom">
+                    通行可能領域設定
+                </BaseButton>
+                <BaseButton onClick={() => OnClickSetState(9, setPage)} _className="buttom">
+                    車一覧
+                </BaseButton>
             </BaseHeader>
-        </>
+        </div>
     )
 }
 export default CarKanri;

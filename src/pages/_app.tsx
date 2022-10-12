@@ -1,7 +1,5 @@
 import '../styles/globals.css';
 import '../styles/WelcomePage.css';
-import '../styles/CarMenu.css';
-import '../styles/EndPage.css';
 import '../styles/DestinationMapPage.css';
 import type { AppProps } from 'next/app';
 import { createContext, useState } from 'react';

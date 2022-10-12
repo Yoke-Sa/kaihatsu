@@ -1,10 +1,7 @@
 .leaflet-container {
   /* 配置 */
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
 
   /* 幅、高さ */
   width: auto;
@@ -23,10 +20,7 @@
 .loader {
   /* 配置 */
   position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,13 +68,7 @@
   transition-duration: 150ms;
 }
 
-.buttomflex {
-  /* 配置 */
-  display: flex;
-}
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ↓↓↓ 追加した分 ↓↓↓ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
 /* ホバー時 */
 .buttom:hover {
   /* 背景色 */
@@ -107,4 +95,378 @@ input[type="checkbox"] {
 }
 *::-webkit-scrollbar{         /*** Chrome, Safari ***/
   display: none;
+}
+
+
+
+/************************** Page **************************/
+.car-menu, .dest-map, .exist-route, .car-watch, .path-check, .end {
+  /* 配置 */
+  position: fixed;
+  inset: 0;
+
+  /* 幅、高さ */
+  width: 100vw;
+  height: 100vh;
+
+  /* 余白 */
+  margin: 0 auto;
+  padding: 0;
+
+  /* 背景色 */
+  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
+  /* 制限 */
+  overflow: hidden;
+}
+
+
+
+/******************** header ********************/
+.car-menu header, .end header {
+  /* 配置 */
+  position: inherit;
+  inset: 0;
+  
+  /* 幅、高さ */
+  width: inherit;
+  height: 6vh;
+  
+  /* 余白 */
+  margin: inherit;
+  
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.car-menu header h1, .end header h1 {
+  /* 配置 */
+  text-align: center;
+  inset: 0;
+  
+  /* 余白 */
+  margin: inherit;
+  
+  /* フォント */
+  font-size: 4vh;
+  color: white;
+}
+
+.exist-route header, .car-watch header, .path-check header {
+  /* 配置 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* 幅、高さ */
+  width: inherit;
+  height: 6vh;
+  
+  /* 余白 */
+  margin: inherit;
+  
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.exist-route header .buttom , .car-watch header .buttom, .path-check header .buttom {
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
+  
+  /* 余白 */
+  margin: 0 2vw;
+
+  /* フォント */
+  font-size: var(--btn-font, auto);
+  line-height: normal;
+}
+.path-check header label {
+  /* 幅、高さ */
+  width: var(--sel-size, auto);
+  height: var(--label-font, auto);
+
+  /* 余白 */
+  margin: 0 0 0 2rem;
+
+  /* フォント */
+  font-size: var(--label-font, auto);
+  line-height: normal;
+  color: white;
+}
+.path-check header #sel {
+  /* 幅、高さ */
+  width: var(--sel-size, auto);
+  height: var(--label-font, auto);
+
+  /* 余白 */
+  margin: 0 0 0 1rem;
+}
+
+
+
+/******************** main ********************/
+.car-menu main, .end main {
+  /* 配置 */
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+.car-menu main .buttom, .end main .buttom {
+  /* 配置 */
+  display: block;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: var(--btn-size, auto);
+  height: auto;
+  min-width: 20vw;
+
+  /* 余白 */
+  margin-top: 15vh;
+
+  /* フォント */
+  font-size: var(--btn-font);
+  line-height: normal;
+}
+.end main h1 {
+  /* 余白 */
+  margin: var(--h1-margin);
+  
+  /* フォント */
+  font-size: var(--h1-font);
+  line-height: normal;
+}
+
+.dest-map main, .exist-route main, .car-watch main, .path-check main {
+  content: "";
+}
+.dest-map main .leaflet-container, .exist-route main .leaflet-container , .car-watch main .leaflet-container, .path-check main .leaflet-container {
+  /* 幅、高さ */
+  width: inherit;
+  height: 90vh;
+  
+  /* カーソル */
+  cursor: var(--map-cursor);
+}
+.dest-map main .leaflet-container:active, .exist-route main .leaflet-container:active, .car-watch main .leaflet-container:active, .path-check main .leaflet-container:active {
+  cursor: grabbing;
+}
+
+.dest-map {
+  cursor: url("./cursor/marker-icon.png") 12 50, grab;
+}
+.exist-route, .path-check {
+  --map-cursor: default;
+}
+.car-watch {
+  --map-cursor: pointer;
+}
+
+
+/******************** footer ********************/
+.car-menu footer, .dest-map footer, .exist-route footer, .car-watch footer, .path-check footer, .end footer {
+  /* 配置 */
+  position: inherit;
+  bottom: 0;
+  
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4vh;
+ 
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.welcome footer h1, .car-menu footer h1, .dest-map footer h1, .exist-route footer h1, .car-watch footer h1, .path-check footer h1, .end footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+  
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+ 
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
+
+
+
+/******************** お試しレスポンシブ ********************/
+/* PC */
+@media screen and ((min-height:800px) or (min-width: 1024px)) {
+  .car-menu {
+    --btn-font: 2rem;
+    --btn-size: 30rem;
+  }
+  .dest-map {
+    --label-padding: 0.55rem 0.8rem 0.4rem 2.1rem;
+    --label-font: 1.6rem;
+    --label-before-margin: 0.5rem 0.5rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1.6rem;
+  }
+  .car-watch {
+    --btn-font: 1.6rem;
+  }
+  .path-check {
+    --label-font: 1.6rem;
+    --btn-font: 1.6rem;
+    --sel-size: 5rem;
+  }
+  .end {
+    --h1-margin: 20rem 0 0 0;
+    --h1-font: 2.5rem;
+    --btn-font: 2.5rem;
+    --btn-size: 20rem;
+  }
+}
+/* タブレット */
+@media screen and (min-height: 600px) and (max-height: 800px) {
+  .car-menu {
+    --btn-font: 1.5rem;
+    --btn-size: 15rem;
+  }
+  .dest-map {
+    --label-padding: 0.3rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 1.3rem;
+    --label-before-margin: 0.4rem 0.4rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1.3rem;
+  }
+  .car-watch {
+    --btn-font: 1.3rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --sel-size: 5rem;
+  }
+  .end {
+    --h1-margin: 12rem 0 0 0;
+    --h1-font: 2.5rem;
+    --btn-font: 2.5rem;
+    --btn-size: 20rem;
+  }
+}
+/* タブレット(小) */
+@media screen and (max-height: 600px) {
+  .car-menu {
+    --btn-font: 1.2rem;
+    --btn-size: 20rem;
+  }
+  .dest-map {
+    --label-padding: 0.25rem 0.6rem 0.2rem 2rem;
+    --label-font: 1rem;
+    --label-before-margin: 0.3rem 0.3rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1rem;
+  }
+  .car-watch {
+    --btn-font: 1rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --sel-size: 5rem;
+  }
+  .end {
+    --h1-margin: 9rem 0 0 0;
+    --h1-font: 2rem;
+    --btn-font: 2rem;
+    --btn-size: 15rem;
+  }
+}
+/* スマホ(大) */
+@media screen and (min-width: 380px) and (max-width: 600px) {
+  .car-menu {
+    --btn-font: 1.5rem;
+    --btn-size: 15rem;
+  }
+  .dest-map {
+    --label-padding: 0.3rem 0.6rem 0.2rem 1.8rem;
+    --label-font: 1.2rem;
+    --label-before-margin: 0.4rem 0.4rem 0 -1.3rem;
+  }
+  .exist-route {
+    --btn-font: 1rem;
+  }
+  .car-watch {
+    --btn-font: 1.2rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --sel-size: 5rem;
+  }
+  .end {
+    --h1-margin: 16rem 0 0 0;
+    --h1-font: 1.3rem;
+    --btn-font: 1.5rem;
+    --btn-size: 10rem;
+  }
+}
+/* スマホ(中) */
+@media screen and (min-width: 300px) and (max-width: 380px) {
+  .car-menu {
+    --btn-font: 1.2rem;
+    --btn-size: 12rem;
+  }
+  .dest-map {
+    --label-padding: 0.2rem 0.5rem 0.2rem 1.8rem;
+    --label-font: 1rem;
+    --label-before-margin: 0.3rem 0.3rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 0.8rem;
+  }
+  .car-watch {
+    --btn-font: 1rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --sel-size: 5rem;
+  }
+  .end {
+    --h1-margin: 14rem 0 0 0;
+    --h1-font: 1.2rem;
+    --btn-font: 1.2rem;
+    --btn-size: 8rem;
+  }
+}
+/* スマホ(小) */
+@media screen and (max-width: 300px) {
+  .car-menu {
+    --btn-font: 1rem;
+    --btn-size: 10rem;
+  }
+  .dest-map {
+    --label-padding: 0.2rem 0.4rem 0.25rem 1.8rem;
+    --label-font: 0.75rem;
+    --label-before-margin: 0.1rem 0.3rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 0.6rem;
+  }
+  .car-watch {
+    --btn-font: 0.75rem;
+  }
+  .path-check {
+    --label-font: 0.8rem;
+    --btn-font: 0.8rem;
+    --sel-size: 3rem;
+  }
+  .end {
+    --h1-margin: 12rem 0 0 0;
+    --h1-font: 1rem;
+    --btn-font: 1rem;
+    --btn-size: 7rem;
+  }
 }

@@ -8,14 +8,14 @@ const EndPage = () => {
     return (
         <div className="end">
             <header>
-                <h1>Finished</h1>
+                <h1>Thank you for coming</h1>
             </header>
 
             <main>
-                <h1>　ご利用ありがとうございました。<br />　またのご利用お待ちしております。</h1>
+                <h1>　ご利用ありがとうございました。<br /><br />　またのご利用お待ちしております。</h1>
                 <div>
                     <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
-                        TOPへ戻る
+                        TOPへ
                     </BaseButton>
                 </div>
             </main>
