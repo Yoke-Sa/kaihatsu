@@ -1,0 +1,184 @@
+/************************** DestinationMap page **************************/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 320px) {
+  .dest-map header .buttom, .dest-map header label{
+    max-width: 12rem;
+  }
+}
+
+.dest-map {
+  /* 配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+  /* 幅、高さ */
+  width: 100vw;
+  height: 100vh;
+  
+  /* 余白 */
+  margin: 0 auto;
+  padding: 0;
+  
+  /* 制限 */
+  overflow: hidden;
+}
+  
+/******************** header ********************/
+
+  .dest-map header {
+    /* 配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 幅、高さ */
+    width: 100vw;
+    height: 6vh;
+    
+    /* 余白 */
+    margin: 0 auto;
+    
+    /* 背景色 */
+    background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+  }
+@media screen and (min-width: 321px) {
+  .dest-map header label {
+    /* 余白 */
+    margin: 0 1vw 0 auto;
+    padding: 0.2rem 0.6rem 0.2rem 2rem;
+    
+    /* フォント */
+    font-size: 1rem;
+    color: white;
+    
+    /* 背景色 */
+    background-color: blue;
+
+    /* 枠線 */
+    border: solid 0.15rem white;
+    border-radius: 100px;
+    box-shadow: 0 0 20px black;
+
+    /* カーソル */
+    cursor: pointer;
+
+    /* アニメーション */
+    transition: background-color .3s;
+  }
+}
+  label:first-of-type {
+    transform: translateX(-40px);
+  }
+    
+  label:last-of-type {
+    transform: translateX(40px);
+  }
+  .dest-map header input[type="checkbox"]:empty + label:hover {
+    /* 背景色 */
+    background-color: rgb(13, 32, 139);
+  }
+  .dest-map header input[type="checkbox"]:checked + label {
+    /* 背景色 */
+    background-color: rgb(252, 50, 50);
+  }
+  .dest-map header input[type="checkbox"]:checked + label:hover {
+    /* 背景色 */
+    background-color: rgb(122, 14, 14);
+  }
+@media screen and (min-width: 321px) {
+  .dest-map header label::before {
+    /* 空要素 */
+    content: '';
+
+    /* 配置 */
+    display: inline-flex;
+
+    /* 幅、高さ */
+    width: 1rem;
+    height: 1rem;
+
+    /* 余白 */
+    margin-top: 0.1rem;
+    margin-left: -1.5rem;
+    margin-right: 0.3rem;
+    padding: 0 auto;
+
+    /* 枠線 */
+    border: 0.15rem solid #fff;
+    border-radius: 100px;
+
+    /* アニメーション */
+    transition: background-color .3s;
+  }
+}
+  .dest-map header input[type="checkbox"]:checked + label::before {
+    /* 背景色 */
+    background-color: #fff;
+  }
+@media screen and (min-width: 321px) {
+  .dest-map header .buttom {
+    /* 幅、高さ */
+    width: auto;
+    height: auto;
+    
+    /* フォント */
+    font-size: 1rem;
+    line-height: normal;
+  }
+}
+
+/******************** main ********************/
+.dest-map main {
+  /* 空要素 */
+  content: "";
+}
+  
+.dest-map main .leaflet-container {
+  /* 幅、高さ */
+  width: 100vw;
+  height: 89.8vh;
+  
+  /* カーソル */
+  cursor: url("./cursor/marker-icon.png") 12 50, grab;
+}
+  
+.dest-map main .leaflet-container:active {
+  cursor: grabbing;
+}
+  
+/******************** footer ********************/
+.dest-map footer {
+  /* 配置 */
+  position: absolute;
+  bottom: 0;
+  
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+  
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+  
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.dest-map footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+  
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+  
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}

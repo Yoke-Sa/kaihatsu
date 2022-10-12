@@ -1,5 +1,9 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import '../styles/WelcomePage.css';
+import '../styles/CarMenu.css';
+import '../styles/EndPage.css';
+import '../styles/DestinationMapPage.css';
+import type { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
 import { PageLoading } from '../component/hooks/pageLoading';
 
@@ -18,7 +22,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </LoadingContext.Provider>
     </>
   )
+};
 
-}
-
-export default MyApp
+export default MyApp;

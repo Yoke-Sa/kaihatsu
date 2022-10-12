@@ -63,17 +63,15 @@ const DestinationMapPage = () => {
     return (
         <div className="dest-map">
             <BaseHeader>
-                <div className="bottomflex">
-                    <BaseCheckBox onChange={onClickJunkai} >
-                        巡回ルート
-                    </BaseCheckBox>
-                    <BaseButton onClick={onClickRouteSearch} _className="buttom">
-                        経路探索
-                    </BaseButton>
-                    <BaseButton onClick={onClickBack} _className="buttom">
-                        戻る
-                    </BaseButton>
-                </div>
+                <BaseCheckBox onChange={onClickJunkai} >
+                    巡回
+                </BaseCheckBox>
+                <BaseButton onClick={onClickRouteSearch} _className="buttom">
+                    経路探索
+                </BaseButton>
+                <BaseButton onClick={onClickBack} _className="buttom">
+                    戻る
+                </BaseButton>
             </BaseHeader>
 
             <main>

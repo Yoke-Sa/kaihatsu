@@ -1,0 +1,115 @@
+/************************** End page **************************/
+.end {
+    /* 配置 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  
+    /* 幅、高さ */
+    width: 100vw;
+    height: auto;
+  
+    /* 余白 */
+    margin: 0 auto;
+    padding: 0;
+  
+    /* 背景色 */
+    background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+}
+  
+/******************** header ********************/
+.end header {
+  /* 配置 */
+  position: inherit sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+  /* 幅、高さ */
+  width: 100vw;
+  height: 6vh;
+  
+  /* 余白 */
+  margin: 0 auto;
+  
+  /* 背景色 */
+  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+}
+.end header h1 {
+  /* 配置 */
+  text-align: center;
+  top: 0;
+  left: 0;
+  
+  /* 余白 */
+  margin: 0 auto;
+  
+  /* フォント */
+  font-size: 4vh;
+  color: white;
+}
+  
+/******************** main ********************/
+.end main {
+  /* 配置 */
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+.end main h1 {
+  /* 余白 */
+  margin: 20vh 0 0 0;
+  
+  /* フォント */
+  font-size: 4vh;
+}
+.end main .buttom {
+  /* 配置 */
+  display: block;
+  text-align: center;
+  
+  /* 幅、高さ */
+  width: auto;
+  height: auto;
+  min-width: 20vw;
+  
+  /* 余白 */
+  margin: 12vh 0 0 0;
+  
+  /* フォント */
+  font-size: 2.5vh;
+}
+  
+/******************** footer ********************/
+.end footer {
+  /* 配置 */
+  position: absolute;
+  bottom: 0;
+  
+  /* 幅、高さ */
+  width: 100vw;
+  height: 4.2vh;
+ 
+  /* 余白 */
+  margin: inherit;
+  padding: auto;
+
+  /* 背景色 */
+  background: radial-gradient(skyblue, blue);
+}
+.end footer h1 {
+  /* 配置 */
+  display: block;
+  text-align: right;
+  
+  /* 余白 */
+  margin: 0 auto;
+  padding: 1vh 0 0 0;
+ 
+  /* フォント */
+  font-size: 2vh;
+  color: white;
+}
