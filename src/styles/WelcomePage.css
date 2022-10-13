@@ -48,12 +48,6 @@
   /* フォント */
   font-size: 4vh;
   color: white;
-
-  /* 背景 */
-  background: var(--header-h1-color);
-  background: var(--webkit-header-h1-color);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /******************** main ********************/

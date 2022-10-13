@@ -8,7 +8,7 @@ const CarMenuPage = () => {
     return (
         <div className="car-menu">
             <header>
-                <h1>Car Menu</h1>
+                <h1><span>Car Menu</span></h1>
             </header>
 
             <main>

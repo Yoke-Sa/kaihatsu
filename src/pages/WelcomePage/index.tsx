@@ -10,7 +10,7 @@ const WelcomePage = () => {
 	return (
 		<div className="welcome">
 			<header>
-				<h1>Kohga TOP</h1>
+				<h1><span>Kohga TOP</span></h1>
 			</header>
 
 			<main>

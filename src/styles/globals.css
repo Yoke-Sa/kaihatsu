@@ -107,8 +107,8 @@ input[type="checkbox"] {
   --header-color: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
   --webkit-header-color: -webkit-linear-gradient(-25deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
 
-  --header-h1-color: linear-gradient(90deg, rgb(224, 252, 147) 35%, #f550ea 50%, #FFCC70 65%);
-  --webkit-header-h1-color: -webkit-linear-gradient(0deg, rgb(224, 252, 147) 35%, #f550ea 50%, #FFCC70 65%);
+  --header-h1-color: linear-gradient(90deg, rgb(224, 252, 147), #f550ea 30%, #FFCC70);
+  --webkit-header-h1-color: -webkit-linear-gradient(0deg, rgb(224, 252, 147) , #f550ea 30%, #FFCC70);
 
   --footer-color: radial-gradient(skyblue, blue);
   --webkit-footer-color: -webkit-radial-gradient(skyblue, blue);
@@ -170,12 +170,6 @@ input[type="checkbox"] {
   
   /* フォント */
   font-size: 4vh;
-
-  /* 背景 */
-  background: var(--header-h1-color);
-  background: var(--webkit-header-h1-color);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .exist-route header, .car-watch header, .path-check header {
   /* 配置 */
@@ -193,6 +187,13 @@ input[type="checkbox"] {
   /* 背景 */
   background: var(--header-color);
   background: var(--webkit-header-color);
+}
+header h1 span {
+  /* 背景 */
+  background: var(--header-h1-color);
+  background: var(--webkit-header-h1-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .exist-route header .button, .car-watch header .button, .path-check header .button {
   /* 幅、高さ */

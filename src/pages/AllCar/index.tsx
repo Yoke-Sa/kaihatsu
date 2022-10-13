@@ -9,7 +9,7 @@ const AllCar = () => {
 	return (
 		<div className="all-car">
 			<BaseHeader>
-				<h1>車一覧</h1>
+				<h1><span>車一覧</span></h1>
 			</BaseHeader>
 
 			<main>

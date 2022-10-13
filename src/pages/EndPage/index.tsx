@@ -8,7 +8,7 @@ const EndPage = () => {
     return (
         <div className="end">
             <header>
-                <h1>Thank you for coming</h1>
+                <h1><span>Thank you for coming</span></h1>
             </header>
 
             <main>

@@ -18,7 +18,7 @@ const CarKanri = () => {
     return (
         <div className="car-manage">
             <BaseHeader>
-                <h1>Car Manage</h1>
+                <h1><span>Car Manage</span></h1>
             </BaseHeader>
 
             <main>
