@@ -6,37 +6,36 @@ import BaseCircleMap from "../../component/map/BaseCircleMap";
 import { OnClickSetState } from "../../component/onClickSetState/onClickSetState";
 import { BaseHeader } from "../../component/template/Header/BaseHeader";
 
-
-
-const DynamicMap = dynamic(() => {
-    return import('../../component/map/BaseCircleMap')
-},
-    { ssr: false }
-)
+const DynamicMap = dynamic(
+	() => {
+		return import("../../component/map/BaseCircleMap");
+	},
+	{ ssr: false }
+);
 
 const PathOK = () => {
-    const { page, setPage } = useContext(PageStateContext);
-    const { radius, setRadius } = useContext(CircleContext);
-    return (
-        <div className="path-check">
-            <BaseHeader>
-                <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
-                    TOPへ
-                </BaseButton>
+	const { page, setPage } = useContext(PageStateContext);
+	const { radius, setRadius } = useContext(CircleContext);
+	return (
+		<div className="path-check">
+			<BaseHeader>
+				<BaseButton onClick={() => OnClickSetState(7, setPage)} _className="button">
+					戻る
+				</BaseButton>
                 <label htmlFor="sel">半径を入力</label>
-                <input type="number" onChange={(e) => setRadius(e.target.valueAsNumber)} name="sel" id="sel" value={radius} />
-            </BaseHeader>
+                <input type="number" onChange={(e) => setRadius(e.target.valueAsNumber)} name="sel" id="sel" value={radius} className="no-spin"/>
+			</BaseHeader>
 
-            <main>
-                <div className="gakubuti">
-                    <DynamicMap />
-                </div>
-            </main>
+			<main>
+				<div className="gakubuti">
+					<DynamicMap />
+				</div>
+			</main>
 
-            <footer>
-                <h1>&copy; Kohga. All rights Reserved.</h1>
-            </footer>
-        </div>
-    )
-}
+			<footer>
+				<h1>&copy; Kohga. All rights Reserved.</h1>
+			</footer>
+		</div>
+	);
+};
 export default PathOK;

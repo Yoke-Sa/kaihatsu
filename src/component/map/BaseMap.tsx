@@ -9,7 +9,7 @@ L.Icon.Default.imagePath = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1
 
 
 const position = new LatLng(38.72311671577611, 141.0346841825174);
-const zoomlebel = 18;
+const zoomlevel = 18;
 
 const ClickMarker = () => {
 
@@ -32,12 +32,12 @@ const ClickMarker = () => {
 const BaseMap = () => {
 
     return (
-        <MapContainer center={position} zoom={zoomlebel} scrollWheelZoom={false}>
+        <MapContainer center={position} zoom={zoomlevel} scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 minZoom={16}
-                maxNativeZoom={zoomlebel}
+                maxNativeZoom={zoomlevel}
                 maxZoom={21}
             />
             <ClickMarker />

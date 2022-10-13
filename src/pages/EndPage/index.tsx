@@ -14,7 +14,7 @@ const EndPage = () => {
             <main>
                 <h1>　ご利用ありがとうございました。<br /><br />　またのご利用お待ちしております。</h1>
                 <div>
-                    <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="buttom">
+                    <BaseButton onClick={() => OnClickSetState(0, setPage)} _className="button">
                         TOPへ
                     </BaseButton>
                 </div>

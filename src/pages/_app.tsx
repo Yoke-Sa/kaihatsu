@@ -1,6 +1,8 @@
 import '../styles/globals.css';
 import '../styles/WelcomePage.css';
 import '../styles/DestinationMapPage.css';
+import '../styles/AddRoutePage.css';
+import '../styles/AllCarPage.css';
 import type { AppProps } from 'next/app';
 import { createContext, useState } from 'react';
 import { PageLoading } from '../component/hooks/pageLoading';

@@ -17,7 +17,7 @@ const CarWatchPage = () => {
     return (
         <div className="car-watch">
             <BaseHeader>
-                <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="buttom">
+                <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="button">
                     車メニューに戻る
                 </BaseButton>
             </BaseHeader>

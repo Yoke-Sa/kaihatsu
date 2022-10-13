@@ -4,8 +4,14 @@
   inset: 0;
 
   /* 幅、高さ */
-  width: auto;
-  height: auto;
+  width: inherit;
+  height: 90vh;
+  
+  /* カーソル */
+  cursor: var(--map-cursor);
+}
+.leaflet-container:active {
+  cursor: grabbing;
 }
 
 .gakubuti {
@@ -26,7 +32,7 @@
   justify-content: center;
   align-items: center;
 
-  /* 背景色 */
+  /* 背景 */
   background: rgba(255, 255, 255, 0.5);
 
   /* 優先度 */
@@ -43,15 +49,15 @@
   line-height: 2.25rem;
 }
 
-.buttom {
+.button {
   /* 余白 */
   margin: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 
-  /* 背景色 */
-  background-color: blue;
-  box-shadow: 0 0 20px black;
+  /* 背景 */
+  background-color: rgb(8, 128, 108);
+  box-shadow: 0 0 20px rgb(88, 233, 173);
   
   /* フォント */
   color: rgba(255, 255, 255);
@@ -60,7 +66,8 @@
   line-height: 2.5rem;
 
   /* 枠線 */
-  border-radius: 0.5rem;
+  border: outset 0.1rem rgb(227, 225, 235);
+  border-radius: 1rem;
 
   /* アニメーション */
   transition-property: color, background-color, border, text-decoration-color, fill, stroke;
@@ -70,9 +77,9 @@
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ↓↓↓ 追加した分 ↓↓↓ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ホバー時 */
-.buttom:hover {
-  /* 背景色 */
-  background-color: rgb(123, 139, 226);
+.button:hover {
+  /* 背景 */
+  background-color: rgb(76, 201, 178);
 
   /* カーソル */
   cursor: pointer;
@@ -92,6 +99,19 @@ input[type="checkbox"] {
   user-select: none;
   scrollbar-width: none;      /*** Firefox ***/
   -ms-overflow-style: none;   /*** IE, Microsoft Edge ***/
+
+  /* カスタムプロパティ */
+  --page-color: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+  --webkit-page-color: -webkit-radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+
+  --header-color: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+  --webkit-header-color: -webkit-linear-gradient(-25deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+
+  --header-h1-color: linear-gradient(90deg, rgb(224, 252, 147) 35%, #f550ea 50%, #FFCC70 65%);
+  --webkit-header-h1-color: -webkit-linear-gradient(0deg, rgb(224, 252, 147) 35%, #f550ea 50%, #FFCC70 65%);
+
+  --footer-color: radial-gradient(skyblue, blue);
+  --webkit-footer-color: -webkit-radial-gradient(skyblue, blue);
 }
 *::-webkit-scrollbar{         /*** Chrome, Safari ***/
   display: none;
@@ -100,7 +120,7 @@ input[type="checkbox"] {
 
 
 /************************** Page **************************/
-.car-menu, .dest-map, .exist-route, .car-watch, .path-check, .end {
+.car-menu, .dest-map, .exist-route, .add-route, .car-watch, .car-manage, .path-check, .end {
   /* 配置 */
   position: fixed;
   inset: 0;
@@ -113,8 +133,9 @@ input[type="checkbox"] {
   margin: 0 auto;
   padding: 0;
 
-  /* 背景色 */
-  background: radial-gradient(rgb(255, 255, 255), rgb(255, 241, 195));
+  /* 背景 */
+  background: var(--page-color);
+  background: var(--webkit-page-color);
 
   /* 制限 */
   overflow: hidden;
@@ -123,7 +144,7 @@ input[type="checkbox"] {
 
 
 /******************** header ********************/
-.car-menu header, .end header {
+.car-menu header, .car-manage header, .end header {
   /* 配置 */
   position: inherit;
   inset: 0;
@@ -135,10 +156,11 @@ input[type="checkbox"] {
   /* 余白 */
   margin: inherit;
   
-  /* 背景色 */
-  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+  /* 背景 */
+  background: var(--header-color);
+  background: var(--webkit-header-color);
 }
-.car-menu header h1, .end header h1 {
+.car-menu header h1, .car-manage header h1, .end header h1 {
   /* 配置 */
   text-align: center;
   inset: 0;
@@ -148,9 +170,13 @@ input[type="checkbox"] {
   
   /* フォント */
   font-size: 4vh;
-  color: white;
-}
 
+  /* 背景 */
+  background: var(--header-h1-color);
+  background: var(--webkit-header-h1-color);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .exist-route header, .car-watch header, .path-check header {
   /* 配置 */
   display: flex;
@@ -164,10 +190,11 @@ input[type="checkbox"] {
   /* 余白 */
   margin: inherit;
   
-  /* 背景色 */
-  background: linear-gradient(65deg, skyblue 15%, blue, rgb(135, 153, 235) 80%, rgb(223, 225, 252));
+  /* 背景 */
+  background: var(--header-color);
+  background: var(--webkit-header-color);
 }
-.exist-route header .buttom , .car-watch header .buttom, .path-check header .buttom {
+.exist-route header .button, .car-watch header .button, .path-check header .button {
   /* 幅、高さ */
   width: auto;
   height: auto;
@@ -181,7 +208,7 @@ input[type="checkbox"] {
 }
 .path-check header label {
   /* 幅、高さ */
-  width: var(--sel-size, auto);
+  width: var(--form-size, auto);
   height: var(--label-font, auto);
 
   /* 余白 */
@@ -192,25 +219,38 @@ input[type="checkbox"] {
   line-height: normal;
   color: white;
 }
-.path-check header #sel {
+.path-check header input[type="number"] {
+  /* 配置 */
+  text-align: right;
+
   /* 幅、高さ */
-  width: var(--sel-size, auto);
+  width: var(--form-size, auto);
   height: var(--label-font, auto);
 
   /* 余白 */
   margin: 0 0 0 1rem;
-}
+  padding: 0.1rem 0.2rem 0 0;
 
+  /* フォント */
+  font-size: calc(var(--label-font, auto) - 0.1rem);
+  font-family: serif;
+  line-height: normal;
+}
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  -moz-appearance: textfield !important;
+}
 
 
 /******************** main ********************/
-.car-menu main, .end main {
+.car-menu main, .car-manage main, .end main {
   /* 配置 */
-  display:flex;
+  display: flex;
   flex-flow: column;
   align-items: center;
 }
-.car-menu main .buttom, .end main .buttom {
+.car-menu main .button, .end main .button {
   /* 配置 */
   display: block;
   text-align: center;
@@ -227,6 +267,23 @@ input[type="checkbox"] {
   font-size: var(--btn-font);
   line-height: normal;
 }
+.car-manage main .button {
+  /* 配置 */
+  display: block;
+  text-align: center;
+
+  /* 幅、高さ */
+  width: var(--btn-size, auto);
+  height: auto;
+  min-width: 20vw;
+
+  /* 余白 */
+  margin-top: 20vh;
+
+  /* フォント */
+  font-size: var(--btn-font);
+  line-height: normal;
+}
 .end main h1 {
   /* 余白 */
   margin: var(--h1-margin);
@@ -236,22 +293,10 @@ input[type="checkbox"] {
   line-height: normal;
 }
 
-.dest-map main, .exist-route main, .car-watch main, .path-check main {
+.dest-map main, .exist-route main, .add-route main, .car-watch main, .path-check main {
   content: "";
 }
-.dest-map main .leaflet-container, .exist-route main .leaflet-container , .car-watch main .leaflet-container, .path-check main .leaflet-container {
-  /* 幅、高さ */
-  width: inherit;
-  height: 90vh;
-  
-  /* カーソル */
-  cursor: var(--map-cursor);
-}
-.dest-map main .leaflet-container:active, .exist-route main .leaflet-container:active, .car-watch main .leaflet-container:active, .path-check main .leaflet-container:active {
-  cursor: grabbing;
-}
-
-.dest-map {
+.dest-map, .add-route {
   cursor: url("./cursor/marker-icon.png") 12 50, grab;
 }
 .exist-route, .path-check {
@@ -262,8 +307,9 @@ input[type="checkbox"] {
 }
 
 
+
 /******************** footer ********************/
-.car-menu footer, .dest-map footer, .exist-route footer, .car-watch footer, .path-check footer, .end footer {
+.car-menu footer, .dest-map footer, .exist-route footer, .add-route footer, .car-watch footer, .car-manage footer, .path-check footer, .end footer {
   /* 配置 */
   position: inherit;
   bottom: 0;
@@ -276,10 +322,14 @@ input[type="checkbox"] {
   margin: inherit;
   padding: auto;
 
-  /* 背景色 */
-  background: radial-gradient(skyblue, blue);
+  /* 背景 */
+  background: var(--footer-color);
+  background: var(--webkit-footer-color);
+
+  /* カーソル */
+  cursor: default;
 }
-.welcome footer h1, .car-menu footer h1, .dest-map footer h1, .exist-route footer h1, .car-watch footer h1, .path-check footer h1, .end footer h1 {
+.welcome footer h1, .car-menu footer h1, .dest-map footer h1, .exist-route footer h1, .add-route footer h1, .car-watch footer h1, .car-manage footer h1, .path-check footer h1, .all-car footer h1, .end footer h1 {
   /* 配置 */
   display: block;
   text-align: right;
@@ -295,9 +345,116 @@ input[type="checkbox"] {
 
 
 
-/******************** お試しレスポンシブ ********************/
+/******************** tooltip ********************/
+.tooltip {
+  position: relative;
+}
+.tooltip-text {
+  /* 配置 */
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  bottom: -38px;
+
+  /* 余白 */
+  padding: 5px 20px;
+
+  /* 背景 */
+  background: #333;
+
+  /* フォント */
+  font-size: 0.8rem;
+  line-height: normal;
+  color: #fff;
+  white-space: nowrap;
+
+  /* 枠線 */
+  border-radius: 20px;
+  
+  /* アニメーション */
+  transition: 0.3s ease-in;
+  transform: translateX(-50%);
+
+  /* 可視性 */
+  opacity: 0;
+  visibility: hidden;
+}
+.tooltip-text:before {
+  /* 挿入要素 */
+	content: '';
+
+  /* 配置 */
+	position: absolute;
+	top: -13px;
+	left: 50%;
+
+  /* 余白 */
+	margin-left: -7px;
+
+  /* 枠線 */
+	border: 7px solid transparent;
+	border-bottom: 7px solid #333;
+}
+.tooltip:hover .tooltip-text {
+  /* 可視性 */
+  opacity: 1;
+  visibility: visible;
+
+  /* アニメーション */
+  transition-delay: 0.5s;
+}
+.car-menu .tooltip-text {
+  /* 配置 */
+  bottom: -43px;
+
+  /* フォント */
+  font-size: 1rem;
+}
+
+
+
+/******************** お試しレスポンシブ(カスタムプロパティ変えてるだけ) ********************/
 /* PC */
-@media screen and ((min-height:800px) or (min-width: 1024px)) {
+@media screen {
+  .car-menu {
+    --btn-font: 2rem;
+    --btn-size: 30rem;
+  }
+  .dest-map {
+    --label-padding: 0.55rem 0.8rem 0.4rem 2.1rem;
+    --label-font: 1.5rem;
+    --label-before-margin: 0.55rem 0.52rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1.6rem;
+  }
+  .add-route {
+    --label-padding: 0.55rem 0.8rem 0.4rem 2.1rem;
+    --label-font: 1.5rem;
+    --label-before-margin: 0.55rem 0.52rem 0 -1.5rem;
+    --form-size: 20rem;
+  }
+  .car-watch {
+    --btn-font: 1.6rem;
+  }
+  .car-manage {
+    --btn-font: 2rem;
+    --btn-size: 40rem;
+  }
+  .path-check {
+    --label-font: 1.6rem;
+    --btn-font: 1.6rem;
+    --form-size: 5rem;
+  }
+  .end {
+    --h1-margin: 20rem 0 0 0;
+    --h1-font: 2.5rem;
+    --btn-font: 2.5rem;
+    --btn-size: 20rem;
+  }
+}
+/* タブレット(大) */
+@media screen and (max-width:1024px) {
   .car-menu {
     --btn-font: 2rem;
     --btn-size: 30rem;
@@ -310,13 +467,23 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 1.6rem;
   }
+  .add-route {
+    --label-padding: 0.2rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 1.2rem;
+    --label-before-margin: 0.55rem 0.52rem 0 -1.5rem;
+    --form-size: 18rem;
+  }
   .car-watch {
     --btn-font: 1.6rem;
+  }
+  .car-manage {
+    --btn-font: 2rem;
+    --btn-size: 30rem;
   }
   .path-check {
     --label-font: 1.6rem;
     --btn-font: 1.6rem;
-    --sel-size: 5rem;
+    --form-size: 5rem;
   }
   .end {
     --h1-margin: 20rem 0 0 0;
@@ -325,8 +492,8 @@ input[type="checkbox"] {
     --btn-size: 20rem;
   }
 }
-/* タブレット */
-@media screen and (min-height: 600px) and (max-height: 800px) {
+/* タブレット(中) */
+@media screen and (max-width:820px) {
   .car-menu {
     --btn-font: 1.5rem;
     --btn-size: 15rem;
@@ -339,23 +506,33 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 1.3rem;
   }
+  .add-route {
+    --label-padding: 0.2rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 1.3rem;
+    --label-before-margin: 0.55rem 0.3rem 0 -1.5rem;
+    --form-size: 16rem;
+  }
   .car-watch {
     --btn-font: 1.3rem;
+  }
+  .car-manage {
+    --btn-font: 2rem;
+    --btn-size: 20rem;
   }
   .path-check {
     --label-font: 1rem;
     --btn-font: 1rem;
-    --sel-size: 5rem;
+    --form-size: 5rem;
   }
   .end {
-    --h1-margin: 12rem 0 0 0;
+    --h1-margin: 23rem 0 0 0;
     --h1-font: 2.5rem;
     --btn-font: 2.5rem;
     --btn-size: 20rem;
   }
 }
 /* タブレット(小) */
-@media screen and (max-height: 600px) {
+@media screen and (max-width: 768px) {
   .car-menu {
     --btn-font: 1.2rem;
     --btn-size: 20rem;
@@ -368,13 +545,101 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 1rem;
   }
+  .add-route {
+    --label-padding: 0.2rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 1.2rem;
+    --label-before-margin: 0.55rem 0.3rem 0 -1.6rem;
+    --form-size: 15rem;
+  }
   .car-watch {
     --btn-font: 1rem;
+  }
+  .car-manage {
+    --btn-font: 1.8rem;
+    --btn-size: 20rem;
   }
   .path-check {
     --label-font: 1rem;
     --btn-font: 1rem;
-    --sel-size: 5rem;
+    --form-size: 5rem;
+  }
+  .end {
+    --h1-margin: 18rem 0 0 0;
+    --h1-font: 2rem;
+    --btn-font: 2rem;
+    --btn-size: 15rem;
+  }
+}
+/* タブレット(横長 大) */
+@media screen and (min-width: 768px) and (max-height: 800px) {
+  .car-menu {
+    --btn-font: 1.2rem;
+    --btn-size: 20rem;
+  }
+  .dest-map {
+    --label-padding: 0.25rem 0.6rem 0.2rem 2rem;
+    --label-font: 1rem;
+    --label-before-margin: 0.3rem 0.3rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1rem;
+  }
+  .add-route {
+    --label-padding: 0.2rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 1.2rem;
+    --label-before-margin: 0.55rem 0.3rem 0 -1.6rem;
+    --form-size: 20rem;
+  }
+  .car-watch {
+    --btn-font: 1rem;
+  }
+  .car-manage {
+    --btn-font: 1.5rem;
+    --btn-size: 20rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --form-size: 5rem;
+  }
+  .end {
+    --h1-margin: 13rem 0 0 0;
+    --h1-font: 2rem;
+    --btn-font: 2rem;
+    --btn-size: 15rem;
+  }
+}
+/* タブレット(横長 小) */
+@media screen and (min-width: 768px) and (max-height: 600px) {
+  .car-menu {
+    --btn-font: 1.2rem;
+    --btn-size: 20rem;
+  }
+  .dest-map {
+    --label-padding: 0.25rem 0.6rem 0.2rem 2rem;
+    --label-font: 1rem;
+    --label-before-margin: 0.3rem 0.3rem 0 -1.5rem;
+  }
+  .exist-route {
+    --btn-font: 1rem;
+  }
+  .add-route {
+    --label-padding: 0.2rem 0.8rem 0.2rem 2.1rem;
+    --label-font: 0.9rem;
+    --label-before-margin: 0.55rem 0.3rem 0 -1.6rem;
+    --form-size: 20rem;
+  }
+  .car-watch {
+    --btn-font: 1rem;
+  }
+  .car-manage {
+    --btn-font: 1.2rem;
+    --btn-size: 20rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --form-size: 5rem;
   }
   .end {
     --h1-margin: 9rem 0 0 0;
@@ -384,7 +649,7 @@ input[type="checkbox"] {
   }
 }
 /* スマホ(大) */
-@media screen and (min-width: 380px) and (max-width: 600px) {
+@media screen and (max-width: 540px) {
   .car-menu {
     --btn-font: 1.5rem;
     --btn-size: 15rem;
@@ -397,13 +662,23 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 1rem;
   }
+  .add-route {
+    --label-padding: 0.1rem 0.2rem 0.1rem 2rem;
+    --label-font: 0.8rem;
+    --label-before-margin: 0.5rem 0.2rem 0 -1.9rem;
+    --form-size: 5rem;
+  }
   .car-watch {
     --btn-font: 1.2rem;
+  }
+  .car-manage {
+    --btn-font: 1.5rem;
+    --btn-size: 15rem;
   }
   .path-check {
     --label-font: 1rem;
     --btn-font: 1rem;
-    --sel-size: 5rem;
+    --form-size: 3rem;
   }
   .end {
     --h1-margin: 16rem 0 0 0;
@@ -413,7 +688,46 @@ input[type="checkbox"] {
   }
 }
 /* スマホ(中) */
-@media screen and (min-width: 300px) and (max-width: 380px) {
+@media screen and (max-width: 420px) {
+  .car-menu {
+    --btn-font: 1.5rem;
+    --btn-size: 15rem;
+  }
+  .dest-map {
+    --label-padding: 0.35rem 0.6rem 0.25rem 1.8rem;
+    --label-font: 1.1rem;
+    --label-before-margin: 0.4rem 0.3rem 0 -1.3rem;
+  }
+  .exist-route {
+    --btn-font: 1rem;
+  }
+  .add-route {
+    --label-padding: 0.1rem 0.2rem 0.1rem 2rem;
+    --label-font: 0.8rem;
+    --label-before-margin: 0.5rem 0.2rem 0 -1.9rem;
+    --form-size: 4rem;
+  }
+  .car-watch {
+    --btn-font: 1.2rem;
+  }
+  .car-manage {
+    --btn-font: 1.5rem;
+    --btn-size: 18rem;
+  }
+  .path-check {
+    --label-font: 1rem;
+    --btn-font: 1rem;
+    --form-size: 3rem;
+  }
+  .end {
+    --h1-margin: 16rem 0 0 0;
+    --h1-font: 1.3rem;
+    --btn-font: 1.5rem;
+    --btn-size: 10rem;
+  }
+}
+/* スマホ(小) */
+@media screen and (max-width: 400px) {
   .car-menu {
     --btn-font: 1.2rem;
     --btn-size: 12rem;
@@ -426,13 +740,23 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 0.8rem;
   }
+  .add-route {
+    --label-padding: 0.1rem 0.2rem 0.1rem 2.1rem;
+    --label-font: 0.8rem;
+    --label-before-margin: 0.5rem 0.2rem 0 -2rem;
+    --form-size: 4rem;
+  }
   .car-watch {
     --btn-font: 1rem;
+  }
+  .car-manage {
+    --btn-font: 1.2rem;
+    --btn-size: 15rem;
   }
   .path-check {
     --label-font: 1rem;
     --btn-font: 1rem;
-    --sel-size: 5rem;
+    --form-size: 3rem;
   }
   .end {
     --h1-margin: 14rem 0 0 0;
@@ -441,8 +765,8 @@ input[type="checkbox"] {
     --btn-size: 8rem;
   }
 }
-/* スマホ(小) */
-@media screen and (max-width: 300px) {
+/* スマホ(極小) */
+@media screen and (max-width: 320px) {
   .car-menu {
     --btn-font: 1rem;
     --btn-size: 10rem;
@@ -455,13 +779,23 @@ input[type="checkbox"] {
   .exist-route {
     --btn-font: 0.6rem;
   }
+  .add-route {
+    --label-padding: 0.1rem 0.1rem 0.1rem 2.3rem;
+    --label-font: 0.7rem;
+    --label-before-margin: 0.2rem 0.1rem 0 -2.1rem;
+    --form-size: 1.2rem;
+  }
   .car-watch {
     --btn-font: 0.75rem;
   }
+  .car-manage {
+    --btn-font: 1.2rem;
+    --btn-size: 15rem;
+  }
   .path-check {
-    --label-font: 0.8rem;
+    --label-font: 0.9rem;
     --btn-font: 0.8rem;
-    --sel-size: 3rem;
+    --form-size: 3rem;
   }
   .end {
     --h1-margin: 12rem 0 0 0;

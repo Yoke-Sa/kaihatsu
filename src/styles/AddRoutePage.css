@@ -1,10 +1,10 @@
-/************************** DestinationMap page **************************/
+/************************** AddRoute Page **************************/
 *, *::before {
   box-sizing: border-box;
 }
 
 /******************** header ********************/
-.dest-map header {
+.add-route header {
   /* 配置 */
   display: flex;
   justify-content: center;
@@ -24,9 +24,9 @@
   /* カーソル */
   cursor: default;
 }
-.dest-map header label {
+.add-route header label:not(#input) {
   /* 余白 */
-  margin: 0 1vw 0 auto;
+  margin: 0 1rem 0 0;
   padding: var(--label-padding);
   
   /* フォント */
@@ -47,7 +47,7 @@
   /* アニメーション */
   transition: background-color .3s;
 }
-.dest-map header label::before {
+.add-route header label:not(#input)::before {
   /* 挿入要素 */
   content: '';
 
@@ -72,30 +72,65 @@
   /* アニメーション */
   transition: background-color .3s;
 }
-.dest-map .button {
+.add-route .button {
   /* 幅、高さ */
   width: auto;
   height: auto;
-  
+
+  /* 余白 */
+  margin: 0 0 0 1rem;
+  padding: 0 0.6rem;
+
   /* フォント */
   font-size: var(--label-font);
   line-height: normal;
 }
+.add-route header label:not(.check) {
+  /* 幅、高さ */
+  width: var(--label-font, auto);
+  height: var(--label-font, auto);
+
+  /* 余白 */
+  margin: 0 0.2rem 0 0rem;
+
+  /* フォント */
+  font-size: var(--label-font, auto);
+  line-height: normal;
+  color: white;
+}
+.add-route header input[type="text"] {
+  /* 配置 */
+  text-align: left;
+
+  /* 幅、高さ */
+  width: var(--form-size, auto);
+  height: var(--label-font, auto);
+
+  /* 余白 */
+  margin: 0 0;
+  padding: 0.3rem 0 0 0;
+
+  /* フォント */
+  font-size: calc(var(--label-font, auto) - 0.3rem);
+  font-family: serif;
+  line-height: normal;
+  color: black;
+}
 
 /*** カスタムプロパティ ***/
-.dest-map input[type="checkbox"]:empty + label {
+.add-route input[type="checkbox"]:empty + label:not(#input) {
   --label-color: rgb(9, 110, 72);
   --label-before-color: rgb(85, 85, 85);
 }
-.dest-map input[type="checkbox"]:empty + label:hover {
+.add-route input[type="checkbox"]:empty + label:not(#input):hover {
   --label-color: rgb(6, 70, 45);
   --label-before-color: rgb(46, 46, 46);
 }
-.dest-map input[type="checkbox"]:checked + label {
+.add-route input[type="checkbox"]:checked + label:not(#input) {
   --label-color: rgb(168, 14, 14);
   --label-before-color: rgb(9, 175, 36);
 }
-.dest-map input[type="checkbox"]:checked + label:hover {
+.add-route input[type="checkbox"]:checked + label:not(#input):hover {
   --label-color: rgb(87, 8, 8);
   --label-before-color: rgb(4, 87, 18);
 }

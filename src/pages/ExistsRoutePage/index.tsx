@@ -15,11 +15,11 @@ const ExistsRoutePage = () => {
     return (
         <div className="exist-route">
             <BaseHeader>
-                <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="buttom">
+                <BaseButton onClick={() => OnClickSetState(1, setPage)} _className="button">
                     車メニューに戻る
                 </BaseButton>
 
-                <BaseButton onClick={() => OnClickSetState(4, setPage)} _className="buttom">
+                <BaseButton onClick={() => OnClickSetState(4, setPage)} _className="button">
                     この経路に行く
                 </BaseButton>
             </BaseHeader>
